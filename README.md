@@ -5,13 +5,14 @@
 ## Description
 An API for a social network web application where users can share their thoughts, react to friends' thoughts, and create a friend list. The application uses Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
+
 ## Table of Contents
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Walkthrough Video](#walkthrough-video)
 - [API Routes](#api-routes)
+- [Walkthrough Video](#walkthrough-video)
 - [Contributing](#contributing)
 - [License](#license)
 - [Questions](#questions)
@@ -29,13 +30,23 @@ An API for a social network web application where users can share their thoughts
 - **Mongoose**: For database schema and interactions.
 
 ## Installation
-To install the necessary dependencies, run `npm install` in the root directory.
+1. Clone the repository:
+``` bash
+git clone https://github.com/ktotah/ktotah-social-media-API.git
+```
+2. Install the necessary dependencies:
+``` bash
+npm install
+```
+3. Create a `.env` file in the root directory based on the `.env.EXAMPLE` file and add your MongoDB URI.
+
 
 ## Usage
-To use this application, clone the repository and run `npm install` to install the necessary dependencies. Create a `.env` file in the root directory based on the `.env.EXAMPLE` file and add your MongoDB URI. Then run `npm start` to start the server.
-
-## Walkthrough Video
-[Link to Walkthrough Video](#)
+1. Start the server:
+``` bash
+node server.js
+```
+2. Use Insomnia or another API client to test the API routes.
 
 ## API Routes
 
@@ -56,6 +67,9 @@ To use this application, clone the repository and run `npm install` to install t
 - `DELETE /api/thoughts/:thoughtId` - Deletes a thought by its ID.
 - `POST /api/thoughts/:thoughtId/reactions` - Adds a reaction to a thought.
 - `DELETE /api/thoughts/:thoughtId/reactions/:reactionId` - Removes a reaction from a thought.
+
+## Walkthrough Video
+[Link to Walkthrough Video](#)
 
 ## Contributing
 Your contributions are what make the community incredible. If you have an idea for improving this project, please fork the repository and create a pull request, or open an issue with your suggestions. For substantial changes, please open an issue first to discuss what you would like to change.
