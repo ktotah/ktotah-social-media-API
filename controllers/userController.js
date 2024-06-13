@@ -68,7 +68,7 @@ module.exports = {
 
         
 
-        res.json({ message: "User and associated thoughts deleted" });
+        res.json({ message: "User and associated thoughts deleted!" });
     } catch (err) {
         res.status(500).json(err);
     }
