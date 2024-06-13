@@ -17,10 +17,10 @@ module.exports = {
         .select("-__v")
         .populate("friends")
         .populate("thoughts");
-        res.json(user);
 
         if (!user) {
             res.status(404).json({ message: "No user found with this ID" });
+            return;
         }
 
         res.json(user);
@@ -48,6 +48,7 @@ module.exports = {
 
         if (!user) {
             res.status(404).json({ message: "No user found with this ID" });
+            return;
         }
         res.json(user);
     } catch (err) {
@@ -61,12 +62,11 @@ module.exports = {
 
         if (!user) {
             res.status(404).json({ message: "No user found with this ID" });
+            return;
         }
 
         // Remove user's associated thoughts
         await Thought.deleteMany({ _id: { $in: user.thoughts } });
-
-        
 
         res.json({ message: "User and associated thoughts deleted!" });
     } catch (err) {
@@ -84,6 +84,7 @@ module.exports = {
 
         if (!user) {
             res.status(404).json({ message: "No user found with this ID" });
+            return;
         }
 
         res.json(user);
@@ -103,6 +104,7 @@ module.exports = {
 
         if (!user) {
             res.status(404).json({ message: "No user found with this ID" });
+            return;
         }
 
         res.json(user);

@@ -17,6 +17,7 @@ module.exports = {
 
             if (!thought) {
                 res.status(404).json({ message: "No thought found with this ID" });
+                return;
             }
 
             res.json(thought);
@@ -48,6 +49,7 @@ module.exports = {
 
             if (!thought) {
                 res.status(404).json({ message: "No thought found with this ID" });
+                return;
             }
 
             res.json(thought);
@@ -63,6 +65,7 @@ module.exports = {
 
             if (!thought) {
                 res.status(404).json({ message: "No thought found with this ID" });
+                return;
             }
 
             await User.findOneAndUpdate(
@@ -86,6 +89,7 @@ module.exports = {
 
             if (!thought) {
                 res.status(404).json({ message: "No thought found with this ID" });
+                return;
             }
 
             res.json(thought);
@@ -104,6 +108,7 @@ module.exports = {
 
             if (!thought) {
                 res.status(404).json({ message: "No thought found with this ID" });
+                return;
             }
 
             res.json(thought);
