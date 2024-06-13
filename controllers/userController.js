@@ -58,21 +58,26 @@ module.exports = {
   // Delete a user by ID
   async deleteUser(req, res) {
     try {
-        const user = await User.findOneAndRemove({ _id: req.params.userId });
-
-        if (!user) {
-            res.status(404).json({ message: "No user found with this ID" });
-            return;
-        }
-
-        // Remove user's associated thoughts
-        await Thought.deleteMany({ _id: { $in: user.thoughts } });
-
-        res.json({ message: "User and associated thoughts deleted!" });
+      console.log("Request to delete user with ID:", req.params.userId);
+      const user = await User.findOneAndDelete({ _id: req.params.userId });
+  
+      if (!user) {
+        console.log("No user found with this ID");
+        return res.status(404).json({ message: "No user found with this ID" });
+      }
+  
+      console.log("User found:", user);
+  
+      // Remove user's associated thoughts
+      await Thought.deleteMany({ _id: { $in: user.thoughts } });
+      console.log("Associated thoughts deleted");
+  
+      res.json({ message: "User and associated thoughts deleted!" });
     } catch (err) {
-        res.status(500).json(err);
+      console.error("Error deleting user:", err);
+      res.status(500).json(err);
     }
-  },
+  },  
   // Add a friend to a user's friend list
   async addFriend(req, res) {
     try {
