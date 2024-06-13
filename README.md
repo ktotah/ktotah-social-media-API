@@ -69,7 +69,7 @@ node server.js
 - `DELETE /api/thoughts/:thoughtId/reactions/:reactionId` - Removes a reaction from a thought.
 
 ## Walkthrough Video
-[Link to Walkthrough Video](#)
+[Link to Walkthrough Video](https://drive.google.com/file/d/1PY2Bd7dVyHvN4_OMPWsmo9GR_Y-EPl7t/view?usp=sharing)
 
 ## Contributing
 Your contributions are what make the community incredible. If you have an idea for improving this project, please fork the repository and create a pull request, or open an issue with your suggestions. For substantial changes, please open an issue first to discuss what you would like to change.
