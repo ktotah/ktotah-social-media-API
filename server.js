@@ -4,9 +4,6 @@ const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -17,4 +14,3 @@ db.once('open', () => {
     console.log(`API server is running on port ${PORT}`);
   });
 });
-
